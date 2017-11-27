@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="licancan.com.myquarter.MainActivity">
+    <include layout="@layout/title_top" android:id="@+id/top"></include>
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <RadioButton
+            android:id="@+id/button1"
+            android:layout_width="10dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:button="@null"
+            android:text="推荐"
+            android:gravity="center"
+            android:drawableTop="@drawable/tu1"
+            android:textSize="10dp"
+            android:textColor="@android:color/darker_gray"/>
+        <RadioButton
+            android:id="@+id/button2"
+            android:layout_width="10dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:button="@null"
+            android:text="段子"
+            android:gravity="center"
+            android:drawableTop="@drawable/tu2"
+            android:textSize="10dp"
+            android:textColor="@android:color/darker_gray"/>
+        <RadioButton
+            android:id="@+id/button3"
+            android:layout_width="10dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:button="@null"
+            android:text="视频"
+            android:gravity="center"
+            android:drawableTop="@drawable/tu3"
+            android:textSize="10dp"
+            android:textColor="@android:color/darker_gray"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_below="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll"
+        >
+    </FrameLayout>
+</RelativeLayout>

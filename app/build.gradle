@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "licancan.com.myquarter"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //个推
+        manifestPlaceholders = [
+                GETUI_APP_ID    : "HnNCFjecfmAYLsuB0tLOq9",
+                GETUI_APP_KEY   : "sPCmPehQuFA9n8zOS1EiE3",
+                GETUI_APP_SECRET: "eR1S59M3Wn5ZuSUTDJRMJ"
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    /*Fresco*/
+    implementation 'com.facebook.fresco:fresco:1.5.0'
+    /*Bugly统计*/
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    /*LeackCanary内存泄漏检测*/
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    //个推
+    compile 'com.getui:sdk:2.11.1.0'
+    implementation project(':slidingmenu')
+    implementation project(':roundimageh')
+    implementation project(':criclecustom')
+    implementation 'com.android.support:design:27.0.1'
+    compile 'com.xhb:xbanner:1.2.2'
+    implementation 'com.github.bumptech.glide:glide:4.3.1'
+}

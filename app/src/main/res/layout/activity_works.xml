@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="licancan.com.myquarter.WorksActivity">
+    <RelativeLayout
+        android:id="@+id/work_top"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorTopColor">
+
+        <TextView
+            android:id="@+id/work_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="返回"
+            android:drawableLeft="@drawable/iv_back"
+            android:textColor="@color/TextWhite"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="我的作品"
+            android:textColor="@color/TextWhite"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:gravity="center"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@+id/work_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/work_tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorColor="@color/colorTopColor"
+            app:tabIndicatorHeight="4dp"
+            app:tabMaxWidth="150dp"
+            app:tabContentStart="100dp"
+            >
+        </android.support.design.widget.TabLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/work_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/work_tabLayout"></android.support.v4.view.ViewPager>
+    </RelativeLayout>
+</RelativeLayout>
