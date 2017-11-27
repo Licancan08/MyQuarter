@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/mi"
-    tools:context="licancan.com.myquarter.LoginActivity">
+    tools:context="licancan.com.myquarter.activity.LoginActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

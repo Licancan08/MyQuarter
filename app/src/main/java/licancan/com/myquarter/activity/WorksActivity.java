@@ -1,4 +1,4 @@
-package licancan.com.myquarter;
+package licancan.com.myquarter.activity;
 
 import android.content.res.Resources;
 import android.support.design.widget.TabLayout;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import java.lang.reflect.Field;
 
+import licancan.com.myquarter.R;
 import licancan.com.myquarter.adapter.F1ViewPagerAdapter;
 import licancan.com.myquarter.adapter.MyWorkViewPagerAdapter;
 

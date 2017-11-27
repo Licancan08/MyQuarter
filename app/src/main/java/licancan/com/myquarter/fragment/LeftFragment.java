@@ -11,8 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import licancan.com.myquarter.R;
-import licancan.com.myquarter.SettingsActivity;
-import licancan.com.myquarter.WorksActivity;
+import licancan.com.myquarter.activity.SettingsActivity;
+import licancan.com.myquarter.activity.WorksActivity;
 
 /**
  * Created by robot on 2017/11/14.

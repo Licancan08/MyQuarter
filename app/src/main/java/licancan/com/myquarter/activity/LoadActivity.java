@@ -1,13 +1,14 @@
-package licancan.com.myquarter;
+package licancan.com.myquarter.activity;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
+
 import com.igexin.sdk.PushManager;
 
+import licancan.com.myquarter.R;
 import licancan.com.myquarter.service.MyService;
 import licancan.com.myquarter.service.PutService;
 

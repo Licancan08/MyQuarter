@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login1"
-    tools:context="licancan.com.myquarter.LoginActivity">
+    tools:context="licancan.com.myquarter.activity.LoginActivity">
     <ImageView
         android:id="@+id/iv_back"
         android:layout_width="wrap_content"

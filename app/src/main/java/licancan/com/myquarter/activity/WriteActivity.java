@@ -1,31 +1,33 @@
-package licancan.com.myquarter;
+package licancan.com.myquarter.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
+import licancan.com.myquarter.R;
 
-    private TextView setting_back;
+public class WriteActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private TextView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_write);
         initView();
     }
 
     private void initView() {
-        setting_back = findViewById(R.id.setting_back);
-        setting_back.setOnClickListener(this);
+        back = findViewById(R.id.back);
+        back.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId())
         {
-            case R.id.setting_back:
+            case R.id.back:
                 finish();
                 break;
         }

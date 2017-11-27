@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="licancan.com.myquarter.WriteActivity">
+    tools:context="licancan.com.myquarter.activity.WriteActivity">
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"

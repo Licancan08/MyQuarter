@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/setting_Grey"
-    tools:context="licancan.com.myquarter.SettingsActivity">
+    tools:context="licancan.com.myquarter.activity.SettingsActivity">
     <RelativeLayout
         android:id="@+id/setting_top"
         android:layout_width="match_parent"

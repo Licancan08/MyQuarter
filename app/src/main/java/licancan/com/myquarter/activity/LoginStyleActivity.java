@@ -1,4 +1,4 @@
-package licancan.com.myquarter;
+package licancan.com.myquarter.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import licancan.com.myquarter.R;
 
 public class LoginStyleActivity extends AppCompatActivity implements View.OnClickListener {
 

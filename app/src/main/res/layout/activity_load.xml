@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="licancan.com.myquarter.LoadActivity">
+    tools:context="licancan.com.myquarter.activity.LoadActivity">
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -1,7 +1,6 @@
-package licancan.com.myquarter;
+package licancan.com.myquarter.activity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -12,8 +11,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.kson.slidingmenu.SlidingMenu;
-import com.squareup.haha.perflib.Main;
 
+import licancan.com.myquarter.R;
 import licancan.com.myquarter.fragment.Fragment1;
 import licancan.com.myquarter.fragment.Fragment2;
 import licancan.com.myquarter.fragment.Fragment3;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="licancan.com.myquarter.MainActivity">
+    tools:context="licancan.com.myquarter.activity.MainActivity">
     <include layout="@layout/title_top" android:id="@+id/top"></include>
     <LinearLayout
         android:id="@+id/ll"

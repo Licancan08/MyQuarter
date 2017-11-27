@@ -64,7 +64,8 @@
             android:id="@+id/rl_left1">
 
             <ImageView
-                android:layout_width="30dp"
+                android:layout_width="25dp"
+                android:layout_centerVertical="true"
                 android:layout_height="wrap_content"
                 android:src="@drawable/raw_1499933216"/>
 
@@ -91,7 +92,8 @@
             android:id="@+id/rl_left2">
 
             <ImageView
-                android:layout_width="30dp"
+                android:layout_width="25dp"
+                android:layout_centerVertical="true"
                 android:layout_height="wrap_content"
                 android:src="@drawable/raw_1499947358"/>
 
@@ -118,7 +120,8 @@
             android:id="@+id/rl_left3">
 
             <ImageView
-                android:layout_width="30dp"
+                android:layout_width="25dp"
+                android:layout_centerVertical="true"
                 android:layout_height="wrap_content"
                 android:src="@drawable/raw_1499946865"/>
 
@@ -133,6 +136,7 @@
             <ImageView
                 android:layout_width="18dp"
                 android:layout_height="18dp"
+                android:layout_centerVertical="true"
                 android:src="@drawable/raw_1499943790"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
@@ -144,7 +148,8 @@
             android:id="@+id/rl_left4">
 
             <ImageView
-                android:layout_width="30dp"
+                android:layout_width="25dp"
+                android:layout_centerVertical="true"
                 android:layout_height="wrap_content"
                 android:src="@drawable/raw_1499947389"/>
 
@@ -157,8 +162,9 @@
                 android:text="消息通知"/>
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
                 android:src="@drawable/raw_1499943790"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
