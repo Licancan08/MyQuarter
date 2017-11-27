@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="@dimen/y100"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/y100"
         android:background="@color/colorTopColor">
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/iv_head"
             android:layout_alignParentLeft="true"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/x80"
+            android:layout_height="@dimen/y80"
             android:layout_centerVertical="true"
             app:placeholderImage="@drawable/raw_1499936862"
             app:roundAsCircle="true"
@@ -29,8 +29,8 @@
             android:id="@+id/write"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/x90"
+            android:layout_height="@dimen/y90"
             android:src="@drawable/bianji"
             android:layout_marginRight="5dp"/>
     </RelativeLayout>

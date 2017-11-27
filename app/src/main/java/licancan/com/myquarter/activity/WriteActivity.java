@@ -6,15 +6,25 @@ import android.view.View;
 import android.widget.TextView;
 
 import licancan.com.myquarter.R;
+import licancan.com.myquarter.base.BaseActivity;
+import licancan.com.myquarter.base.BasePresenter;
 
-public class WriteActivity extends AppCompatActivity implements View.OnClickListener {
+public class WriteActivity extends BaseActivity implements View.OnClickListener {
 
     private TextView back;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_write);
+    public int getLayoutid() {
+        return R.layout.activity_write;
+    }
+
+    @Override
+    public BasePresenter initPresenter() {
+        return null;
+    }
+
+    @Override
+    public void Creat() {
         initView();
     }
 

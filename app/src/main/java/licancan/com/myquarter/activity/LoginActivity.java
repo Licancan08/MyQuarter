@@ -9,25 +9,35 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import licancan.com.myquarter.R;
+import licancan.com.myquarter.base.BaseActivity;
+import licancan.com.myquarter.base.BasePresenter;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
-    private ImageView iv_back;
+    private ImageView login_back;
     private TextView tv_regist;
     private TextView forget_pwd;
     private TextView login_in;
     private Button login_button;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+    public int getLayoutid() {
+        return R.layout.activity_login;
+    }
+
+    @Override
+    public BasePresenter initPresenter() {
+        return null;
+    }
+
+    @Override
+    public void Creat() {
         initView();
     }
 
     private void initView() {
-        iv_back = findViewById(R.id.iv_back);
-        iv_back.setOnClickListener(this);
+        login_back = findViewById(R.id.login_back);
+        login_back.setOnClickListener(this);
         tv_regist = findViewById(R.id.tv_regist);
         tv_regist.setOnClickListener(this);
         forget_pwd = findViewById(R.id.forget_pwd);
@@ -42,28 +52,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId())
         {
-            case R.id.iv_back:
+            case R.id.login_back:
                 //关闭此页面
                 finish();
                 break;
             case R.id.tv_regist:
                 //进入注册界面
-                Intent intent=new Intent(LoginActivity.this,RegistActivity.class);
-                startActivity(intent);
+                startActivity(RegistActivity.class);
                 break;
             case R.id.forget_pwd:
                 //忘记密码进入修改界面
-                Intent intent1=new Intent(LoginActivity.this,ForgetActivity.class);
-                startActivity(intent1);
+                startActivity(ForgetActivity.class);
                 break;
             case R.id.login_in:
                 //游客登录  直接进入主页
-                Intent intent2=new Intent(LoginActivity.this,MainActivity.class);
-                startActivity(intent2);
+                startActivity(MainActivity.class);
                 break;
             case R.id.login_button:
-                Intent intent3=new Intent(LoginActivity.this,MainActivity.class);
-                startActivity(intent3);
+                startActivity(MainActivity.class);
                 break;
         }
 

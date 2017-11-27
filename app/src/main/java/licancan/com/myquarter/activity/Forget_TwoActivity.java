@@ -9,8 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import licancan.com.myquarter.R;
+import licancan.com.myquarter.base.BaseActivity;
+import licancan.com.myquarter.base.BasePresenter;
 
-public class Forget_TwoActivity extends AppCompatActivity implements View.OnClickListener {
+public class Forget_TwoActivity extends BaseActivity implements View.OnClickListener {
 
     private TextView fortwo_already_regist;
     private ImageView for_two_back;
@@ -18,9 +20,17 @@ public class Forget_TwoActivity extends AppCompatActivity implements View.OnClic
     private TextView fortwo_onlylogin;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forget__two);
+    public int getLayoutid() {
+        return R.layout.activity_forget__two;
+    }
+
+    @Override
+    public BasePresenter initPresenter() {
+        return null;
+    }
+
+    @Override
+    public void Creat() {
         initView();
     }
 
@@ -44,18 +54,15 @@ public class Forget_TwoActivity extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.fortwo_already_regist:
                 //已经有了账号   进入登录界面
-                Intent intent=new Intent(Forget_TwoActivity.this,LoginActivity.class);
-                startActivity(intent);
+                startActivity(LoginActivity.class);
                 break;
             case R.id.success:
                 //修改完成   进入登录界面
-                Intent intent1=new Intent(Forget_TwoActivity.this,LoginActivity.class);
-                startActivity(intent1);
+                startActivity(LoginActivity.class);
                 break;
             case R.id.fortwo_onlylogin:
                 //游客登录
-                Intent intent2=new Intent(Forget_TwoActivity.this,MainActivity.class);
-                startActivity(intent2);
+                startActivity(MainActivity.class);
                 break;
         }
 

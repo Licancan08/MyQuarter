@@ -8,21 +8,33 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import licancan.com.myquarter.R;
+import licancan.com.myquarter.base.BaseActivity;
+import licancan.com.myquarter.base.BasePresenter;
 
-public class LoginStyleActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginStyleActivity extends BaseActivity implements View.OnClickListener {
 
     private TextView otherStyle;
+    private ImageView loginStyle_back;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_style);
+    public int getLayoutid() {
+        return R.layout.activity_login_style;
+    }
+
+    @Override
+    public BasePresenter initPresenter() {
+        return null;
+    }
+
+    @Override
+    public void Creat() {
         initView();
     }
 
+
     private void initView() {
-        ImageView iv_back = findViewById(R.id.iv_back);
-        iv_back.setOnClickListener(this);
+        loginStyle_back = findViewById(R.id.loginStyle_back);
+        loginStyle_back.setOnClickListener(this);
         otherStyle = findViewById(R.id.otherStyle);
         otherStyle.setOnClickListener(this);
     }
@@ -31,12 +43,11 @@ public class LoginStyleActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         switch (view.getId())
         {
-            case R.id.iv_back:
+            case R.id.loginStyle_back:
                 finish();
                 break;
             case R.id.otherStyle:
-                Intent intent=new Intent(LoginStyleActivity.this,LoginActivity.class);
-                startActivity(intent);
+                startActivity(LoginActivity.class);
                 break;
         }
 

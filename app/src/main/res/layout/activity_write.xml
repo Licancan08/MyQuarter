@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/y100"
         android:background="@color/colorTopColor">
         <TextView
             android:id="@+id/back"
@@ -19,7 +19,7 @@
             android:layout_centerVertical="true"
             android:textColor="@color/TextWhite"
             android:textSize="16sp"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="@dimen/x40"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,18 +37,18 @@
         android:background="@drawable/huanghun">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/y200"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:src="@drawable/shi" />
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/y200"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:src="@drawable/duan"
-            android:layout_marginTop="200dp"/>
+            android:layout_marginTop="@dimen/y400"/>
     </RelativeLayout>
 </RelativeLayout>

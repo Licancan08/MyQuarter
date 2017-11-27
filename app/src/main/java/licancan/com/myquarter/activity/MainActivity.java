@@ -13,12 +13,14 @@ import android.widget.TextView;
 import com.kson.slidingmenu.SlidingMenu;
 
 import licancan.com.myquarter.R;
+import licancan.com.myquarter.base.BaseActivity;
+import licancan.com.myquarter.base.BasePresenter;
 import licancan.com.myquarter.fragment.Fragment1;
 import licancan.com.myquarter.fragment.Fragment2;
 import licancan.com.myquarter.fragment.Fragment3;
 import licancan.com.myquarter.fragment.LeftFragment;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private RadioButton button1;
     private RadioButton button2;
@@ -36,22 +38,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView write;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //模拟内存泄漏
-        /*mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
+    public int getLayoutid() {
+        return R.layout.activity_main;
+    }
 
-            }
-        },3*60*1000);
-        finish();*/
+    @Override
+    public BasePresenter initPresenter() {
+        return null;
+    }
+
+    @Override
+    public void Creat() {
         initView();
         initMenu();
     }
-
-
     private void initView() {
         write = findViewById(R.id.write);
         write.setOnClickListener(this);
@@ -149,8 +149,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 slidingMenu.showMenu();
                 break;
             case R.id.write:
-                Intent intent=new Intent(MainActivity.this,WriteActivity.class);
-                startActivity(intent);
+                startActivity(WriteActivity.class);
                 break;
         }
     }

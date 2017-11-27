@@ -7,18 +7,30 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import licancan.com.myquarter.R;
+import com.squareup.haha.perflib.Main;
 
-public class RegistActivity extends AppCompatActivity implements View.OnClickListener {
+import licancan.com.myquarter.R;
+import licancan.com.myquarter.base.BaseActivity;
+import licancan.com.myquarter.base.BasePresenter;
+
+public class RegistActivity extends BaseActivity implements View.OnClickListener {
 
     private TextView hava_regist;
     private ImageView regist_back;
     private TextView regist_onlylogin;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_regist);
+    public int getLayoutid() {
+        return R.layout.activity_regist;
+    }
+
+    @Override
+    public BasePresenter initPresenter() {
+        return null;
+    }
+
+    @Override
+    public void Creat() {
         initView();
     }
 
@@ -37,16 +49,14 @@ public class RegistActivity extends AppCompatActivity implements View.OnClickLis
         {
             case R.id.hava_regist:
                 //已经有了账号   进入登录界面
-                Intent intent=new Intent(RegistActivity.this,LoginActivity.class);
-                startActivity(intent) ;
+                startActivity(LoginActivity.class) ;
                 break;
             case R.id.regist_back:
                 finish();
                 break;
             case R.id.regist_onlylogin:
                 //游客登录
-                Intent intent1=new Intent(RegistActivity.this,LoginActivity.class);
-                startActivity(intent1);
+                startActivity(MainActivity.class);
                 break;
         }
 

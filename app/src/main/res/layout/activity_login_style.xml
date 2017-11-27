@@ -7,14 +7,14 @@
     android:background="@drawable/login1"
     tools:context="licancan.com.myquarter.activity.LoginActivity">
     <ImageView
-        android:id="@+id/iv_back"
+        android:id="@+id/loginStyle_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:src="@drawable/iv_back"/>
     <com.bwie.aizhonghui.criclecustom.CircleRoundImageView
-        android:layout_width="80dp"
-        android:layout_height="75dp"
+        android:layout_width="@dimen/x205"
+        android:layout_height="@dimen/y180"
         android:src="@drawable/logo"
         app:circle="false"
         app:radius="10dp"
@@ -27,21 +27,21 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="40dp">
         <ImageView
-            android:layout_width="220dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/x480"
+            android:layout_height="@dimen/y76"
             android:src="@drawable/weixin"
             android:background="@drawable/wx"
             android:layout_centerHorizontal="true"/>
         <ImageView
-            android:layout_marginTop="50dp"
-            android:layout_width="220dp"
-            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/y100"
+            android:layout_width="@dimen/x480"
+            android:layout_height="@dimen/y76"
             android:src="@drawable/qq"
             android:background="@drawable/qq_xml"
             android:layout_centerHorizontal="true"/>
         <TextView
             android:id="@+id/otherStyle"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="@dimen/y260"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"

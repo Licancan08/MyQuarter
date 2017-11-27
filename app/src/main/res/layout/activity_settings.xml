@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/setting_top"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/y100"
         android:background="@color/colorTopColor">
 
         <TextView
@@ -35,12 +35,12 @@
         android:id="@+id/view1"
         android:layout_below="@+id/setting_top"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="@dimen/y22"
         android:background="@color/setting_Grey">
     </View>
     <RelativeLayout
         android:background="@color/TextWhite"
-        android:padding="10dp"
+        android:padding="8dp"
         android:id="@+id/layout1"
         android:layout_below="@+id/view1"
         android:layout_width="match_parent"
@@ -58,7 +58,7 @@
             android:layout_alignParentRight="true"
             android:text="0.1.1"
             android:layout_centerVertical="true"
-            android:layout_marginRight="40dp"
+            android:layout_marginRight="@dimen/x100"
             android:textSize="16sp"
             android:textColor="@color/SettingText"/>
         <ImageView
@@ -71,13 +71,13 @@
     <View
         android:layout_below="@+id/layout1"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/y1"
         android:background="@color/setting_Grey"
         />
     <RelativeLayout
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="@dimen/y5"
         android:background="@color/TextWhite"
-        android:padding="10dp"
+        android:padding="8dp"
         android:id="@+id/layout2"
         android:layout_below="@+id/layout1"
         android:layout_width="match_parent"
@@ -101,11 +101,11 @@
 
         android:layout_below="@+id/layout2"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="@dimen/y22"
         android:background="@color/setting_Grey"
         />
     <RelativeLayout
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/y20"
         android:background="@color/TextWhite"
         android:padding="10dp"
         android:id="@+id/layout3"
@@ -131,13 +131,13 @@
         android:id="@+id/view3"
         android:layout_below="@+id/layout3"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/y1"
         android:background="@color/setting_Grey"
         />
     <RelativeLayout
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="@dimen/y5"
         android:background="@color/TextWhite"
-        android:padding="10dp"
+        android:padding="8dp"
         android:id="@+id/layout4"
         android:layout_below="@+id/view3"
         android:layout_width="match_parent"
@@ -155,7 +155,7 @@
             android:layout_alignParentRight="true"
             android:text="128M"
             android:layout_centerVertical="true"
-            android:layout_marginRight="40dp"
+            android:layout_marginRight="@dimen/x100"
             android:textSize="16sp"
             android:textColor="@color/SettingText"/>
         <ImageView
@@ -166,13 +166,12 @@
             android:layout_centerVertical="true"/>
     </RelativeLayout>
     <Button
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="@dimen/y50"
         android:layout_below="@+id/layout4"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="@dimen/y90"
         android:text="退出登录"
         android:textSize="18sp"
-
         android:background="@drawable/orange_button"
         android:textColor="@color/TextWhite"/>
 </RelativeLayout>

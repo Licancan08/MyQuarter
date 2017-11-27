@@ -9,8 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import licancan.com.myquarter.R;
+import licancan.com.myquarter.base.BaseActivity;
+import licancan.com.myquarter.base.BasePresenter;
 
-public class ForgetActivity extends AppCompatActivity implements View.OnClickListener {
+public class ForgetActivity extends BaseActivity implements View.OnClickListener {
 
     private ImageView forget_back;
     private TextView for_already_regist;
@@ -18,9 +20,17 @@ public class ForgetActivity extends AppCompatActivity implements View.OnClickLis
     private TextView for_oneylogin;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forget);
+    public int getLayoutid() {
+        return R.layout.activity_forget;
+    }
+
+    @Override
+    public BasePresenter initPresenter() {
+        return null;
+    }
+
+    @Override
+    public void Creat() {
         initView();
     }
 
@@ -44,17 +54,14 @@ public class ForgetActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.for_already_regist:
                 //已经有了账号   进入登录界面
-                Intent intent=new Intent(ForgetActivity.this,LoginActivity.class);
-                startActivity(intent);
+                startActivity(LoginActivity.class);
                 break;
             case R.id.but_next:
                 //忘记密码  进行下一步的修改
-                Intent intent1=new Intent(ForgetActivity.this,Forget_TwoActivity.class);
-                startActivity(intent1);
+                startActivity(Forget_TwoActivity.class);
                 break;
             case R.id.for_oneylogin:
-                Intent intent2=new Intent(ForgetActivity.this,MainActivity.class);
-                startActivity(intent2);
+                startActivity(MainActivity.class);
                 break;
         }
 

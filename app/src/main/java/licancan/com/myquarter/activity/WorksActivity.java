@@ -15,8 +15,10 @@ import java.lang.reflect.Field;
 import licancan.com.myquarter.R;
 import licancan.com.myquarter.adapter.F1ViewPagerAdapter;
 import licancan.com.myquarter.adapter.MyWorkViewPagerAdapter;
+import licancan.com.myquarter.base.BaseActivity;
+import licancan.com.myquarter.base.BasePresenter;
 
-public class WorksActivity extends AppCompatActivity implements View.OnClickListener {
+public class WorksActivity extends BaseActivity implements View.OnClickListener {
 
     private TabLayout work_tabLayout;
     private ViewPager work_viewPager;
@@ -24,14 +26,20 @@ public class WorksActivity extends AppCompatActivity implements View.OnClickList
     private TextView work_back;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_works);
-        initView();
+    public int getLayoutid() {
+        return R.layout.activity_works;
     }
 
-    private void initView() {
+    @Override
+    public BasePresenter initPresenter() {
+        return null;
+    }
 
+    @Override
+    public void Creat() {
+        initView();
+    }
+    private void initView() {
         work_tabLayout = findViewById(R.id.work_tabLayout);
         work_viewPager = findViewById(R.id.work_viewPager);
         adapter = new MyWorkViewPagerAdapter(getSupportFragmentManager());
