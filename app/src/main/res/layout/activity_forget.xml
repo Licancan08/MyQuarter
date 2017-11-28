@@ -84,7 +84,7 @@
             android:layout_below="@+id/layout"
             android:layout_width="@dimen/x595"
             android:layout_height="@dimen/y1"
-            android:layout_marginTop="@dimen/y12"
+            android:layout_marginTop="@dimen/y16"
             android:layout_centerHorizontal="true"
             android:background="@color/view"/>
         <EditText

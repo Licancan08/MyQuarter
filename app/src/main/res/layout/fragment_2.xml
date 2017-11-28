@@ -5,6 +5,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="@dimen/y300"
+        android:scaleType="centerCrop"
         android:src="@drawable/guanzhu"
         />
 </RelativeLayout>

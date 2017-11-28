@@ -8,16 +8,25 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import licancan.com.myquarter.R;
+import licancan.com.myquarter.base.BaseFragment;
 
 /**
  * Created by robot on 2017/11/14.
  */
 
-public class Fragment2 extends Fragment{
-    @Nullable
+public class Fragment2 extends BaseFragment {
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=View.inflate(getActivity(), R.layout.fragment2,null);
-        return view;
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void Creat() {
+
+    }
+
+    @Override
+    public int getLayoutResource() {
+        return R.layout.fragment2;
     }
 }

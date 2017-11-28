@@ -5,6 +5,8 @@ package licancan.com.myquarter.api;
  */
 
 public class Api {
+
+    public static String URL="https://www.zhaoapi.cn/";
     //登录
     public static String LOGIN="https://www.zhaoapi.cn/user/login";
     //注册

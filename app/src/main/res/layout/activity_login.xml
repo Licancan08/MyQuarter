@@ -44,7 +44,7 @@
         android:background="@drawable/layout"
         android:layout_height="@dimen/y170">
         <EditText
-            android:id="@+id/et_name"
+            android:id="@+id/et_mobile"
             android:layout_width="@dimen/x550"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -55,7 +55,7 @@
             android:hint="账号"/>
         <View
             android:id="@+id/view"
-            android:layout_below="@+id/et_name"
+            android:layout_below="@+id/et_mobile"
             android:layout_width="245dp"
             android:layout_height="1dp"
             android:layout_marginTop="5dp"

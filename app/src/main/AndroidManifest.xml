@@ -42,7 +42,13 @@
         <service android:name=".service.PutService" />
 
         <activity android:name=".activity.SettingsActivity" />
-        <activity android:name=".activity.WorksActivity"></activity>
+        <activity android:name=".activity.WorksActivity" />
+        <activity android:name=".activity.VedioActivity" />
+        <activity android:name=".activity.DuanziActivity" />
+        <activity android:name=".activity.FollowActivity" />
+        <activity android:name=".activity.HideActivity" />
+        <activity android:name=".activity.SearchFriendActivity" />
+        <activity android:name=".activity.MessageActivity"></activity>
     </application>
 
 </manifest>

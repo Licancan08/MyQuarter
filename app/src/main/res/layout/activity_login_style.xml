@@ -28,7 +28,7 @@
         android:layout_marginBottom="40dp">
         <ImageView
             android:layout_width="@dimen/x480"
-            android:layout_height="@dimen/y76"
+            android:layout_height="@dimen/y75"
             android:src="@drawable/weixin"
             android:background="@drawable/wx"
             android:layout_centerHorizontal="true"/>

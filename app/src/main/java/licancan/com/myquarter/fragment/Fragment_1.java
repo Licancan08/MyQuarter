@@ -15,32 +15,36 @@ import com.stx.xhb.xbanner.XBanner;
 import java.util.ArrayList;
 
 import licancan.com.myquarter.R;
+import licancan.com.myquarter.base.BaseFragment;
 
 /**
  * Created by robot on 2017/11/25.
  */
 
-public class Fragment_1  extends Fragment{
+public class Fragment_1  extends BaseFragment{
 
-
-    private View view;
     private XBanner xBanner;
     private ArrayList list_xbanner;
 
-
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = View.inflate(getActivity(), R.layout.fragment_1,null);
+    public int getLayoutResource() {
+        return R.layout.fragment_1;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void Creat() {
         initView();
         initXBanner();
-        return view;
     }
 
 
-
     private void initView() {
-        xBanner = view.findViewById(R.id.xBanner);
+        xBanner = mView.findViewById(R.id.xBanner);
     }
 
     /**

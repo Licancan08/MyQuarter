@@ -37,6 +37,7 @@
         android:background="@drawable/huanghun">
 
         <ImageView
+            android:id="@+id/iv_shipin"
             android:layout_width="@dimen/x200"
             android:layout_height="@dimen/y200"
             android:layout_alignParentTop="true"
@@ -44,6 +45,7 @@
             android:layout_marginTop="50dp"
             android:src="@drawable/shi" />
         <ImageView
+            android:id="@+id/iv_duanzi"
             android:layout_width="@dimen/x200"
             android:layout_height="@dimen/y200"
             android:layout_alignParentTop="true"

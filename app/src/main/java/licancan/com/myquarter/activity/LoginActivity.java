@@ -1,24 +1,32 @@
 package licancan.com.myquarter.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import licancan.com.myquarter.R;
 import licancan.com.myquarter.base.BaseActivity;
 import licancan.com.myquarter.base.BasePresenter;
+import licancan.com.myquarter.entity.Login;
+import licancan.com.myquarter.presenter.LoginPresenter;
+import licancan.com.myquarter.view.LoginView;
 
-public class LoginActivity extends BaseActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity<LoginPresenter>  implements LoginView,View.OnClickListener {
 
     private ImageView login_back;
     private TextView tv_regist;
     private TextView forget_pwd;
     private TextView login_in;
     private Button login_button;
+    private EditText et_mobile;
+    private EditText et_pwd;
 
     @Override
     public int getLayoutid() {
@@ -26,8 +34,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
     @Override
-    public BasePresenter initPresenter() {
-        return null;
+    public LoginPresenter initPresenter() {
+        return new LoginPresenter(this,this);
     }
 
     @Override
@@ -46,6 +54,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         login_in.setOnClickListener(this);
         login_button = findViewById(R.id.login_button);
         login_button.setOnClickListener(this);
+
+        et_mobile = findViewById(R.id.et_mobile);
+        et_pwd = findViewById(R.id.et_pwd);
     }
 
     @Override
@@ -69,9 +80,37 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 startActivity(MainActivity.class);
                 break;
             case R.id.login_button:
-                startActivity(MainActivity.class);
+                String mobile = et_mobile.getText().toString();
+                String password = et_pwd.getText().toString();
+                presenter.login(mobile,password);
+
                 break;
         }
 
+    }
+
+    @Override
+    public void RequestSuccess(Login login) {
+        ShowToast(login.getMsg());
+        //存入token值
+        SharedPreferences tokensp=getSharedPreferences("config",MODE_PRIVATE);
+        SharedPreferences.Editor edit=tokensp.edit();
+        edit.putString("token",login.getData().getToken());
+        edit.commit();
+        startActivity(MainActivity.class);
+        SharedPreferences uidsp=getSharedPreferences("config",MODE_PRIVATE);
+        SharedPreferences.Editor edit1=uidsp.edit();
+        edit1.putString("uid",login.getData().getUid()+"");
+        edit1.commit();
+    }
+
+    @Override
+    public void RequestFailure(Login login) {
+        ShowToast(login.getMsg());
+    }
+
+    @Override
+    public void Failure(Login login) {
+        ShowToast(login.getMsg());
     }
 }

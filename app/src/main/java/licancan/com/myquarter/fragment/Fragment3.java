@@ -19,28 +19,36 @@ import java.util.List;
 import licancan.com.myquarter.R;
 import licancan.com.myquarter.adapter.F1ViewPagerAdapter;
 import licancan.com.myquarter.adapter.F3ViewPagerAdapter;
+import licancan.com.myquarter.base.BaseFragment;
 
 /**
  * Created by robot on 2017/11/14.
  */
 
-public class Fragment3 extends Fragment {
+public class Fragment3 extends BaseFragment {
 
-    private View view;
     private F3ViewPagerAdapter adapter;
     private TabLayout f3_tabLayout;
     private ViewPager f3_viewPager;
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = View.inflate(getActivity(), R.layout.fragment3,null);
-        initView();
-        return view;
+    public int getLayoutResource() {
+        return R.layout.fragment3;
     }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void Creat() {
+        initView();
+    }
+
     private void initView() {
-        f3_tabLayout = view.findViewById(R.id.f3_tabLayout);
-        f3_viewPager = view.findViewById(R.id.f3_viewPager);
+        f3_tabLayout = mView.findViewById(R.id.f3_tabLayout);
+        f3_viewPager = mView.findViewById(R.id.f3_viewPager);
 
         adapter = new F3ViewPagerAdapter(getActivity().getSupportFragmentManager());
         f3_tabLayout.setupWithViewPager(f3_viewPager);

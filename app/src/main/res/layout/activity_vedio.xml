@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="licancan.com.myquarter.activity.VedioActivity">
+    <RelativeLayout
+        android:id="@+id/vedio_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y100"
+        android:background="@color/colorTopColor">
+
+        <TextView
+            android:id="@+id/vedio_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="返回"
+            android:drawableLeft="@drawable/iv_back"
+            android:textColor="@color/TextWhite"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="拍照"
+            android:textColor="@color/TextWhite"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:gravity="center"/>
+        <ImageView
+            android:layout_width="@dimen/x70"
+            android:layout_height="@dimen/y70"
+            android:src="@drawable/photo"
+            android:layout_marginRight="@dimen/x30"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+</RelativeLayout>

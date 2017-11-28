@@ -18,29 +18,35 @@ import java.util.List;
 
 import licancan.com.myquarter.R;
 import licancan.com.myquarter.adapter.F1ViewPagerAdapter;
+import licancan.com.myquarter.base.BaseFragment;
 
 /**
  * Created by robot on 2017/11/14.
  */
 
-public class Fragment1 extends Fragment {
+public class Fragment1 extends BaseFragment {
 
-    private View view;
     private TabLayout tabLayout;
     private F1ViewPagerAdapter adapter;
     private ViewPager f1_viewPager;
-
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = View.inflate(getActivity(), R.layout.fragment1,null);
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void Creat() {
         initView();
-        return view;
+    }
+
+    @Override
+    public int getLayoutResource() {
+        return R.layout.fragment1;
     }
 
     private void initView() {
-        tabLayout = view.findViewById(R.id.f1_tabLayout);
-        f1_viewPager = view.findViewById(R.id.f1_viewPager);
+        tabLayout = mView.findViewById(R.id.f1_tabLayout);
+        f1_viewPager = mView.findViewById(R.id.f1_viewPager);
 
         adapter = new F1ViewPagerAdapter(getActivity().getSupportFragmentManager());
         tabLayout.setupWithViewPager(f1_viewPager);

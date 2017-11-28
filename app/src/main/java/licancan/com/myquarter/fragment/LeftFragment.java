@@ -8,19 +8,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import licancan.com.myquarter.R;
+import licancan.com.myquarter.activity.FollowActivity;
+import licancan.com.myquarter.activity.HideActivity;
+import licancan.com.myquarter.activity.MessageActivity;
+import licancan.com.myquarter.activity.SearchFriendActivity;
 import licancan.com.myquarter.activity.SettingsActivity;
 import licancan.com.myquarter.activity.WorksActivity;
+import licancan.com.myquarter.base.BaseFragment;
 
 /**
  * Created by robot on 2017/11/14.
  */
 
-public class LeftFragment extends Fragment implements View.OnClickListener {
+public class LeftFragment extends BaseFragment implements View.OnClickListener {
 
-    private View view;
     private ImageView iv_left_shezhi;
     private TextView tv_setting;
     private ImageView iv_left_zuopin;
@@ -29,28 +34,48 @@ public class LeftFragment extends Fragment implements View.OnClickListener {
     private int num=0;
     private ImageView iv_day_night;
     private TextView tv_day_night;
+    private RelativeLayout myfollow;
+    private RelativeLayout myhide;
+    private RelativeLayout searchfriend;
+    private RelativeLayout mynews;
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = View.inflate(getActivity(), R.layout.left_menu,null);
+    public int getLayoutResource() {
+        return R.layout.left_menu;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void Creat() {
         initView();
-        return view;
     }
 
     private void initView() {
-        iv_left_shezhi = view.findViewById(R.id.iv_left_shezhi);
+        iv_left_shezhi = mView.findViewById(R.id.iv_left_shezhi);
         iv_left_shezhi.setOnClickListener(this);
-        tv_setting = view.findViewById(R.id.tv_setting);
+        tv_setting = mView.findViewById(R.id.tv_setting);
         tv_setting.setOnClickListener(this);
-        iv_left_zuopin = view.findViewById(R.id.iv_left_zuopin);
+        iv_left_zuopin = mView.findViewById(R.id.iv_left_zuopin);
         iv_left_zuopin.setOnClickListener(this);
-        mywork = view.findViewById(R.id.mywork);
+        mywork = mView.findViewById(R.id.mywork);
         mywork.setOnClickListener(this);
-        iv_left_select = view.findViewById(R.id.iv_left_select);
+        iv_left_select = mView.findViewById(R.id.iv_left_select);
         iv_left_select.setOnClickListener(this);
-        iv_day_night = view.findViewById(R.id.iv_day_night);
-        tv_day_night = view.findViewById(R.id.tv_day_night);
+        iv_day_night = mView.findViewById(R.id.iv_day_night);
+        tv_day_night = mView.findViewById(R.id.tv_day_night);
+
+        myfollow = mView.findViewById(R.id.myfollow);
+        myfollow.setOnClickListener(this);
+        myhide = mView.findViewById(R.id.myhide);
+        myhide.setOnClickListener(this);
+        searchfriend = mView.findViewById(R.id.searchfriend);
+        searchfriend.setOnClickListener(this);
+        mynews = mView.findViewById(R.id.mynews);
+        mynews.setOnClickListener(this);
     }
 
     @Override
@@ -59,21 +84,17 @@ public class LeftFragment extends Fragment implements View.OnClickListener {
         {
             //设置
             case R.id.iv_left_shezhi:
-                Intent intent=new Intent(getActivity(), SettingsActivity.class);
-                startActivity(intent);
+                startActivity(SettingsActivity.class);
                 break;
             case R.id.tv_setting:
-                Intent intent1=new Intent(getActivity(), SettingsActivity.class);
-                startActivity(intent1);
+                startActivity(SettingsActivity.class);
                 break;
             //我的作品
             case R.id.iv_left_zuopin:
-                Intent intent2=new Intent(getActivity(), WorksActivity.class);
-                startActivity(intent2);
+                startActivity(WorksActivity.class);
                 break;
             case R.id.mywork:
-                Intent intent3=new Intent(getActivity(), WorksActivity.class);
-                startActivity(intent3);
+                startActivity(WorksActivity.class);
                 break;
             case R.id.iv_left_select:
                 num++;
@@ -89,6 +110,22 @@ public class LeftFragment extends Fragment implements View.OnClickListener {
                     iv_day_night.setImageResource(R.drawable.yueliang2);
                     tv_day_night.setText("夜间模式");
                 }
+                break;
+            //我的关注
+            case R.id.myfollow:
+                startActivity(FollowActivity.class);
+                break;
+            //我的收藏
+            case R.id.myhide:
+                startActivity(HideActivity.class);
+                break;
+            //搜索好友
+            case R.id.searchfriend:
+                startActivity(SearchFriendActivity.class);
+                break;
+            //消息通知
+            case R.id.mynews:
+                startActivity(MessageActivity.class);
                 break;
 
         }
