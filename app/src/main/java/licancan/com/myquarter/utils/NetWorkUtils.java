@@ -1,12 +1,10 @@
 package licancan.com.myquarter.utils;
 
 import android.os.Build;
-
-import com.bumptech.glide.load.model.ByteArrayLoader;
-
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import licancan.com.myquarter.api.Api;
 import licancan.com.myquarter.service.ApiService;

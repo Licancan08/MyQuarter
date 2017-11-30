@@ -22,7 +22,7 @@
             android:layout_marginLeft="@dimen/x50"/>
 
         <TextView
-            android:id="@+id/tv_left_nicheng"
+            android:id="@+id/tv_nickName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="浓茶与你"

@@ -1,9 +1,14 @@
 package licancan.com.myquarter.utils;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.util.Log;
 
 import java.io.IOException;
 
+import licancan.com.myquarter.app.MyApp;
 import okhttp3.FormBody;
 import okhttp3.Interceptor;
 import okhttp3.MediaType;
@@ -16,15 +21,33 @@ import okhttp3.ResponseBody;
  */
 
 public class MyInterceptor implements Interceptor {
-    public static String TAG = "MyInterceptor";
+    private int versionCode;
+    public static String token;
+    private Context context;
+    private Request request;
+    private PackageInfo info;
 
     @Override
     public Response intercept(Chain chain) throws IOException {
-        //获取request
-        Request request = chain.request();
+
+        try {
+            //获取request
+            request = chain.request();
+            context= MyApp.context;
+            PackageManager manager=context.getPackageManager();
+            info = manager.getPackageInfo(context.getPackageName(),0);
+            versionCode=info.versionCode;
+
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        SharedPreferences mytoken=context.getSharedPreferences("config",Context.MODE_PRIVATE);
+        token=mytoken.getString("token","");
+
         //判断当前的请求
         if (request.method().equals("POST"))
         {
+            System.out.println("我是拦截器111111============");
             //判断当前的请求Body
             if(request.body() instanceof FormBody)
             {
@@ -38,12 +61,20 @@ public class MyInterceptor implements Interceptor {
                     bodyBuilder.add(body.encodedName(i),body.encodedValue(i));
                 }
                 //添加制定的公共参数到新的body里  把原先的body替换掉
-                body=bodyBuilder.add("source","android").build();
+                body=bodyBuilder.add("source","android")
+                        .add("appVersion",versionCode+"")
+                        .add("token",token+"")
+                        .build();
+
                 //获取新的request   取代原先的request
                 request=request.newBuilder().post(body).build();
             }
-        }
+             }
+        //又请求了一次网络   不能写
+        //System.out.println("我是拦截器22222数据============"+chain.proceed(request).body().string());
+
         //进行返回
-        return chain.proceed(request);
+        Response proceed = chain.proceed(request);
+        return proceed;
     }
 }

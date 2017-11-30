@@ -1,6 +1,8 @@
 package licancan.com.myquarter.fragment;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,14 +13,25 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 import licancan.com.myquarter.R;
 import licancan.com.myquarter.activity.FollowActivity;
 import licancan.com.myquarter.activity.HideActivity;
+import licancan.com.myquarter.activity.LoginStyleActivity;
 import licancan.com.myquarter.activity.MessageActivity;
 import licancan.com.myquarter.activity.SearchFriendActivity;
 import licancan.com.myquarter.activity.SettingsActivity;
+import licancan.com.myquarter.activity.UpdateActivity;
 import licancan.com.myquarter.activity.WorksActivity;
 import licancan.com.myquarter.base.BaseFragment;
+import licancan.com.myquarter.entity.Login;
+import licancan.com.myquarter.entity.User;
+import licancan.com.myquarter.utils.NetWorkUtils;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by robot on 2017/11/14.
@@ -38,6 +51,9 @@ public class LeftFragment extends BaseFragment implements View.OnClickListener {
     private RelativeLayout myhide;
     private RelativeLayout searchfriend;
     private RelativeLayout mynews;
+    private ImageView iv2_touxaing;
+    private TextView tv_nickName;
+    private String nickname;
 
     @Override
     public int getLayoutResource() {
@@ -52,6 +68,50 @@ public class LeftFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void Creat() {
         initView();
+
+    }
+
+    /**
+     * 获取用户信息
+     */
+    private void initData(String uid) {
+        new NetWorkUtils.Builder().addConverterFactory(GsonConverterFactory.create())
+                .addCalladapterFactory(RxJava2CallAdapterFactory.create())
+                .build().getApiService().getUserInfo(uid).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<User>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(User user) {
+                        System.out.println("user=============="+user.getMsg());
+                        String code = user.getCode();
+                        User.DataBean data = user.getData();
+                        nickname = data.getNickname();
+                        tv_nickName.setText(nickname);
+                        if("0".equals(code))
+                        {
+                            System.out.println("个人信息获取成功======="+user.getMsg());
+                        }
+                        else if("1".equals(code))
+                        {
+                            System.out.println("个人信息获取失败======="+user.getMsg());
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
     }
 
     private void initView() {
@@ -76,6 +136,11 @@ public class LeftFragment extends BaseFragment implements View.OnClickListener {
         searchfriend.setOnClickListener(this);
         mynews = mView.findViewById(R.id.mynews);
         mynews.setOnClickListener(this);
+
+        iv2_touxaing = mView.findViewById(R.id.iv2_touxaing);
+        iv2_touxaing.setOnClickListener(this);
+        tv_nickName = mView.findViewById(R.id.tv_nickName);
+        tv_nickName.setOnClickListener(this);
     }
 
     @Override
@@ -111,6 +176,9 @@ public class LeftFragment extends BaseFragment implements View.OnClickListener {
                     tv_day_night.setText("夜间模式");
                 }
                 break;
+            case R.id.iv2_touxaing:
+                startActivity(LoginStyleActivity.class);
+                break;
             //我的关注
             case R.id.myfollow:
                 startActivity(FollowActivity.class);
@@ -127,7 +195,21 @@ public class LeftFragment extends BaseFragment implements View.OnClickListener {
             case R.id.mynews:
                 startActivity(MessageActivity.class);
                 break;
+            //修改昵称  头像
+            case R.id.tv_nickName:
+                Intent intent=new Intent(getActivity(),UpdateActivity.class);
+                intent.putExtra("name",nickname);
+                startActivity(intent);
+                break;
 
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences uisSp=getActivity().getSharedPreferences("config", Context.MODE_PRIVATE);
+        String uid = uisSp.getString("uid", "148");
+        initData(uid);
     }
 }

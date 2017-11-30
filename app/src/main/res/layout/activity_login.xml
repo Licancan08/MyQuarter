@@ -52,7 +52,7 @@
             android:layout_margin="7dp"
             android:textSize="15sp"
             android:textColorHint="@color/hintColor"
-            android:hint="账号"/>
+            android:hint="手机号"/>
         <View
             android:id="@+id/view"
             android:layout_below="@+id/et_mobile"

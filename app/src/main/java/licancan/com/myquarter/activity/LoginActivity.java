@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -57,6 +58,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter>  implements Logi
 
         et_mobile = findViewById(R.id.et_mobile);
         et_pwd = findViewById(R.id.et_pwd);
+        et_pwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
     }
 
     @Override
@@ -83,7 +85,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter>  implements Logi
                 String mobile = et_mobile.getText().toString();
                 String password = et_pwd.getText().toString();
                 presenter.login(mobile,password);
-
+                System.out.println("登录===============");
                 break;
         }
 
@@ -91,26 +93,30 @@ public class LoginActivity extends BaseActivity<LoginPresenter>  implements Logi
 
     @Override
     public void RequestSuccess(Login login) {
+      System.out.println("成功===========================");
         ShowToast(login.getMsg());
         //存入token值
         SharedPreferences tokensp=getSharedPreferences("config",MODE_PRIVATE);
         SharedPreferences.Editor edit=tokensp.edit();
         edit.putString("token",login.getData().getToken());
         edit.commit();
-        startActivity(MainActivity.class);
+
         SharedPreferences uidsp=getSharedPreferences("config",MODE_PRIVATE);
         SharedPreferences.Editor edit1=uidsp.edit();
         edit1.putString("uid",login.getData().getUid()+"");
         edit1.commit();
+        startActivity(MainActivity.class);
     }
 
     @Override
     public void RequestFailure(Login login) {
         ShowToast(login.getMsg());
+        System.out.println("失败===========");
     }
 
     @Override
     public void Failure(Login login) {
         ShowToast(login.getMsg());
+        System.out.println("错误===========");
     }
 }

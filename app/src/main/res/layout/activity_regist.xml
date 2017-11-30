@@ -44,7 +44,7 @@
         android:background="@drawable/layout"
         android:layout_height="@dimen/y180">
         <EditText
-            android:id="@+id/et_name"
+            android:id="@+id/regist_name"
             android:layout_width="@dimen/x520"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -55,14 +55,14 @@
             android:hint="请输入手机号"/>
         <View
             android:id="@+id/view"
-            android:layout_below="@+id/et_name"
+            android:layout_below="@+id/regist_name"
             android:layout_width="@dimen/x520"
             android:layout_height="@dimen/y2"
             android:layout_marginTop="@dimen/y8"
             android:layout_centerHorizontal="true"
             android:background="@color/view"/>
         <EditText
-            android:id="@+id/et_pwd"
+            android:id="@+id/regist_pwd"
             android:layout_below="@+id/view"
             android:layout_width="@dimen/x520"
             android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/regist_button"
         android:layout_width="@dimen/x575"
         android:layout_height="@dimen/y85"
         android:layout_below="@+id/relativeLayout"

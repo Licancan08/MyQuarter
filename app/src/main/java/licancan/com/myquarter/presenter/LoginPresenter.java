@@ -24,16 +24,21 @@ public class LoginPresenter extends BasePresenter<LoginView> implements LoginMod
 
     public void login(String mobile,String password)
     {
+        System.out.println("presenter==========="+mobile+password);
         loginModel.getLogin(mobile,password);
     }
+
+
 
     @Override
     public void getLoginSuccess(Login login) {
         mView.RequestSuccess(login);
+        System.out.println("presenter===========success");
     }
 
     @Override
     public void getLoginFailure(Login login) {
         mView.RequestFailure(login);
+        System.out.println("presenter===========ffffff");
     }
 }

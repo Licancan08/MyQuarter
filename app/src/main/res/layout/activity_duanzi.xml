@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="licancan.com.myquarter.activity.DuanziActivity">
     <RelativeLayout
+        android:id="@+id/duan_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y100"
         android:background="@color/colorTopColor">
@@ -37,4 +38,61 @@
             android:layout_marginRight="@dimen/x30"
             android:textColor="@color/TextWhite"/>
     </RelativeLayout>
+    <EditText
+        android:id="@+id/duan_content"
+        android:layout_below="@+id/duan_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y200"
+        android:layout_marginLeft="@dimen/x30"
+        android:hint="请输入内容"
+        android:background="@null"
+        />
+    <ImageView
+        android:id="@+id/iv_tianjia"
+        android:layout_marginTop="@dimen/y300"
+        android:layout_width="@dimen/x150"
+        android:layout_height="@dimen/y150"
+        android:layout_marginLeft="@dimen/x30"
+        android:src="@drawable/tianjia"/>
+    <View
+        android:id="@+id/view1"
+        android:layout_below="@+id/iv_tianjia"
+        android:layout_marginTop="@dimen/y20"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y1"
+        android:background="@color/hintColor"/>
+    <RelativeLayout
+        android:id="@+id/ta"
+        android:layout_below="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_ta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ta"
+            android:drawableLeft="@drawable/aite"
+            android:padding="10dp"/>
+        <ImageView
+            android:layout_width="@dimen/x70"
+            android:layout_height="@dimen/x70"
+            android:layout_centerVertical="true"
+            android:src="@drawable/zhankai"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x30"/>
+    </RelativeLayout>
+    <View
+        android:id="@+id/tianjia_view"
+        android:layout_below="@+id/ta"
+        android:layout_marginTop="@dimen/y8"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y1"
+        android:background="@color/hintColor"/>
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/tianjiaXRecyclerView"
+        android:layout_below="@+id/tianjia_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.jcodecraeer.xrecyclerview.XRecyclerView>
 </RelativeLayout>

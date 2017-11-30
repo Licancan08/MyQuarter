@@ -14,6 +14,7 @@
             app:tabIndicatorColor="@color/colorTopColor"
             app:tabIndicatorHeight="4dp"
             app:tabMaxWidth="150dp"
+            app:tabSelectedTextColor="@color/colorTopColor"
             app:tabContentStart="100dp"
             >
 
