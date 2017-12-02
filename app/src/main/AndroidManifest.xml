@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
-
     <!-- 选择图片从sdcard中读取数据的权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <!-- 往sdcard中写入数据的权限 -->

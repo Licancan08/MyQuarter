@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/MyQuarter.iml" filepath="$PROJECT_DIR$/MyQuarter.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/criclecustom/criclecustom.iml" filepath="$PROJECT_DIR$/criclecustom/criclecustom.iml" />
-      <module fileurl="file://$PROJECT_DIR$/roundimageh/roundimageh.iml" filepath="$PROJECT_DIR$/roundimageh/roundimageh.iml" />
       <module fileurl="file://$PROJECT_DIR$/slidingmenu/slidingmenu.iml" filepath="$PROJECT_DIR$/slidingmenu/slidingmenu.iml" />
     </modules>
   </component>

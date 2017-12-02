@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 
 import android.graphics.Bitmap;
+import android.media.Image;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.widget.GridLayoutManager;
@@ -27,7 +28,7 @@ import java.util.Map;
 import licancan.com.myquarter.R;
 import licancan.com.myquarter.entity.Duanzi;
 
-/**
+/**整个展示段子列表的适配器   里边包含一个XRcyclerView
  * Created by robot on 2017/11/28.
  */
 
@@ -99,7 +100,7 @@ public class XRecyclerDuanAdapter extends XRecyclerView.Adapter<XRecyclerDuanAda
                     holder.layout_2.setVisibility(View.VISIBLE);
                     holder.layout_3.setVisibility(View.VISIBLE);
 
-                    holder.iv_open.setImageResource(R.drawable.icon_packup);
+                    holder.iv_open.setImageResource(R.drawable.jian);
                     float translationX = holder.layout_1.getTranslationX();
                     ObjectAnimator objectAnimator=ObjectAnimator.ofFloat(holder.layout_1,"translationX",translationX,-100f);
 
@@ -145,7 +146,7 @@ public class XRecyclerDuanAdapter extends XRecyclerView.Adapter<XRecyclerDuanAda
                             holder.layout_1.setVisibility(View.INVISIBLE);
                             holder.layout_2.setVisibility(View.INVISIBLE);
                             holder.layout_3.setVisibility(View.INVISIBLE);
-                            holder.iv_open.setImageResource(R.drawable.icon_open);
+                            holder.iv_open.setImageResource(R.drawable.jia);
                         }
 
                         @Override
@@ -161,9 +162,6 @@ public class XRecyclerDuanAdapter extends XRecyclerView.Adapter<XRecyclerDuanAda
                     map.put(position,false);
 
                 }
-
-
-
             }
         });
 
@@ -171,6 +169,14 @@ public class XRecyclerDuanAdapter extends XRecyclerView.Adapter<XRecyclerDuanAda
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, "水波纹~", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //关注
+        holder.iv_guanzhu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                holder.iv_guanzhu.setImageResource(R.drawable.xin22);
             }
         });
     }
@@ -191,6 +197,7 @@ public class XRecyclerDuanAdapter extends XRecyclerView.Adapter<XRecyclerDuanAda
         public LinearLayout layout_3;
         public ImageView iv_open;
         public XRecyclerView item_xRecyclerView;
+        public ImageView iv_guanzhu;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -207,6 +214,9 @@ public class XRecyclerDuanAdapter extends XRecyclerView.Adapter<XRecyclerDuanAda
 
             //获取图片的XRcyclerView
             item_xRecyclerView = itemView.findViewById(R.id.item_xRecyclerView);
+
+            //关注
+            iv_guanzhu = itemView.findViewById(R.id.iv_guanzhu);
         }
     }
 }

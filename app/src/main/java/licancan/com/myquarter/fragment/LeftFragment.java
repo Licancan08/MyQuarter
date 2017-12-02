@@ -3,6 +3,7 @@ package licancan.com.myquarter.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -54,6 +58,7 @@ public class LeftFragment extends BaseFragment implements View.OnClickListener {
     private ImageView iv2_touxaing;
     private TextView tv_nickName;
     private String nickname;
+    private String icon;
 
     @Override
     public int getLayoutResource() {
@@ -92,6 +97,11 @@ public class LeftFragment extends BaseFragment implements View.OnClickListener {
                         User.DataBean data = user.getData();
                         nickname = data.getNickname();
                         tv_nickName.setText(nickname);
+                        //得到图片
+                        icon = data.getIcon();
+                        System.out.println("icon========"+icon);
+                        Uri url=Uri.parse(icon);
+                        iv2_touxaing.setImageURI(url);
                         if("0".equals(code))
                         {
                             System.out.println("个人信息获取成功======="+user.getMsg());
@@ -199,6 +209,7 @@ public class LeftFragment extends BaseFragment implements View.OnClickListener {
             case R.id.tv_nickName:
                 Intent intent=new Intent(getActivity(),UpdateActivity.class);
                 intent.putExtra("name",nickname);
+                intent.putExtra("icon",icon);
                 startActivity(intent);
                 break;
 

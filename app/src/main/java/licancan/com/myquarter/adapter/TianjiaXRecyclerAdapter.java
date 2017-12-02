@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import licancan.com.myquarter.R;
 import licancan.com.myquarter.activity.DuanziActivity;
 
-/**
+/**选择要添加图片的适配器
  * Created by robot on 2017/11/30.
  */
 

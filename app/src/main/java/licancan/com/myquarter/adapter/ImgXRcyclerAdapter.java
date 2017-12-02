@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide;
 
 import licancan.com.myquarter.R;
 
-/**
+/**段子中展示图片的适配器/XRecyclerView
  * Created by robot on 2017/11/30.
  */
 
@@ -43,7 +43,8 @@ public class ImgXRcyclerAdapter extends RecyclerView.Adapter<ImgXRcyclerAdapter.
         {
             holder.iv_itemImg2.setVisibility(View.VISIBLE);
             Glide.with(context).load(split[position]).into(holder.iv_itemImg2);
-        }else
+        }
+        else
         {
             holder.iv_itemImg3.setVisibility(View.VISIBLE);
             Glide.with(context).load(split[position]).into(holder.iv_itemImg3);

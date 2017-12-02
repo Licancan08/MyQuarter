@@ -7,21 +7,20 @@
         android:id="@+id/iv_itemImg3"
         android:layout_width="match_parent"
         android:layout_height="@dimen/x300"
-        android:src="@drawable/myweixin"
         android:layout_centerHorizontal="true"
         android:scaleType="centerCrop"
-        android:visibility="gone"
+
         />
     <ImageView
         android:id="@+id/iv_itemImg2"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y350"
         android:scaleType="centerCrop"
-        android:visibility="gone"/>
+        />
     <ImageView
         android:id="@+id/iv_itemImg1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y500"
         android:scaleType="centerCrop"
-        android:visibility="gone"/>
+        />
 </RelativeLayout>

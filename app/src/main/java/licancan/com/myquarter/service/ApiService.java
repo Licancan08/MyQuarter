@@ -37,7 +37,7 @@ public interface ApiService {
     //上传头像
     @POST("file/upload")
     @Multipart
-    Observable<BaseBean> upload(@Part MultipartBody.Part uid, @Part MultipartBody.Part file);
+    Observable<BaseBean> upload(@Part MultipartBody.Part uid, @Part MultipartBody.Part file,@Part MultipartBody.Part content1, @Part MultipartBody.Part content2, @Part MultipartBody.Part content3);
 
     //修改昵称
     @POST("user/updateNickName")
@@ -60,4 +60,13 @@ public interface ApiService {
     @FormUrlEncoded
     Observable<Duanzi> getJokes(@Field("page") String page);
 
+    //关注
+    @POST("quarter/follow")
+    @FormUrlEncoded
+    Observable<BaseBean> follow(@Field("uid") String uid,@Field("followId") String followId);
+
+    //关注列表
+    @POST("quarter/getFollowUsers")
+    @FormUrlEncoded
+    Observable<BaseBean> getFollowUsers(@Field("uid") String uid);
 }
